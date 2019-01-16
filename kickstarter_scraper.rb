@@ -7,7 +7,7 @@ def create_project_hash
       #image link: project.css("div.project-thumbnail a img").attribute("src").value
       #description: project.css("p.bbcard_blurb").text
       #location: project.css("ul.project-metaspan.location-name").text
-      #percent_funded: project.css("ul.project-stats")
+      #percent_funded: project.css("ul.project-stats li.first.funded strong").text.gsub("%","").to_i
       
     html = File.read('fixtures/kickstarter.html')
  
